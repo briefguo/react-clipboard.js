@@ -1,15 +1,15 @@
 {
-  "name": "react-clipboard.js",
+  "name": "sunmi-clipboard",
   "version": "2.0.2",
   "description": "Clipboard.js wrapper for ReactJS",
   "main": "dist/react-clipboard.js",
   "browser": "dist/react-clipboard.js",
-  "types": "./react-clipboard.d.ts",
+  "types": "dist/react-clipboard.d.ts",
   "scripts": {
-    "build-debug": "webpack -d",
-    "build": "webpack && webpack -p --output-filename react-clipboard.min.js",
-    "watch": "webpack --watch",
-    "test": "eslint index.js && npm run build"
+    "build": "npm run typescript",
+    "typescript": "npm i && tsc",
+    "watch": "tsc --watch",
+    "test": "tslint"
   },
   "keywords": [
     "clipboard",
@@ -18,29 +18,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nihey/react-clipboard.js.git"
+    "url": "git+https://github.com/briefguo/react-clipboard.js.git"
   },
   "bugs": {
-    "url": "https://github.com/nihey/react-clipboard.js/issues"
+    "url": "https://github.com/briefguo/react-clipboard.js/issues"
   },
-  "author": "Nihey Takizawa <nihey.takizawa@gmail.com>",
-  "license": "CC0",
-  "peerDependencies": {
-    "react": ">=15.5.0"
-  },
+  "author": "Yongjie Guo <gyj9094@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "clipboard": "^2.0.0",
-    "prop-types": "^15.5.0"
+    "clipboard": "^2.0.0"
   },
   "devDependencies": {
-    "@types/clipboard": "^2.0.1",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.1",
-    "babel-loader": "^7.1.2",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "browser-sync": "^2.8.2",
-    "eslint": "^4.9.0",
-    "webpack": "^3.7.1"
-  }
+    "@types/clipboard": "^2.0.1"
+  },
+  "homepage": "https://github.com/briefguo/react-clipboard.js#readme"
 }

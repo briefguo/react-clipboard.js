@@ -1,6 +1,6 @@
-/// <reference types="clipboard" />
-import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import Clipboard from 'clipboard';
+import PropTypes from 'prop-types';
+import React from 'react';
 interface ClipboardButtonProps {
     type?: string;
     className?: string;
@@ -24,8 +24,8 @@ declare class ClipboardButton extends React.Component<ClipboardButtonProps> {
     static defaultProps: {
         onClick(): void;
     };
-    element: any;
-    clipboard: any;
+    element: HTMLElement;
+    clipboard: Clipboard;
     propsWith(regexp: RegExp, remove?: boolean): {};
     componentWillUnmount(): void;
     componentDidMount(): void;

@@ -2,14 +2,10 @@
 
 React wrapper for [clipboard.js](http://zenorocha.github.io/clipboard.js/)
 
-[![Build
-Status](https://travis-ci.org/nihey/react-clipboard.js.svg)](https://travis-ci.org/nihey/react-clipboard.js)
-[![Dependency
-Status](https://david-dm.org/nihey/react-clipboard.js.png)](https://david-dm.org/nihey/react-clipboard.js)
 
 # Installation
 ```
-$ npm i --save react-clipboard.js
+$ npm i --save sunmi-clipboard
 ```
 
 # Usage
@@ -17,7 +13,7 @@ You can use `clipboard.js` original `data-*` attributes:
 ```javascript
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
-import Clipboard from 'react-clipboard.js';
+import Clipboard from 'sunmi-clipboard';
 
 class MyView extends Component {
   render() {
@@ -39,7 +35,7 @@ ReactDOM.render(<MyView/>, document.getElementById('app'));
 ```javascript
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
-import Clipboard from 'react-clipboard.js';
+import Clipboard from 'sunmi-clipboard';
 
 class MyView extends Component {
   constructor() {
@@ -82,7 +78,7 @@ Custom HTML tags may be used as well:
 ```javascript
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
-import Clipboard from 'react-clipboard.js';
+import Clipboard from 'sunmi-clipboard';
 
 class MyView extends Component {
   render() {
@@ -102,7 +98,7 @@ Default html properties may be passed with the `button-*` pattern:
 ```javascript
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
-import Clipboard from 'react-clipboard.js';
+import Clipboard from 'sunmi-clipboard';
 
 class MyView extends Component {
   render() {
@@ -119,5 +115,4 @@ ReactDOM.render(<MyView/>, document.getElementById('react-body'));
 
 # License
 
-This code is released under
-[CC0](http://creativecommons.org/publicdomain/zero/1.0/) (Public Domain)
+MIT
