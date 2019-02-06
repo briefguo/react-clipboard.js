@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const clipboard_1 = require("clipboard");
-const prop_types_1 = require("prop-types");
-const react_1 = require("react");
-class ClipboardButton extends react_1.default.Component {
+const Clipboard = require("clipboard");
+const PropTypes = require("prop-types");
+const React = require("react");
+class ClipboardButton extends React.Component {
     /* Returns a object with all props that fulfill a certain naming pattern
      *
      * @param {RegExp} regexp - Regular expression representing which pattern
@@ -43,7 +43,7 @@ class ClipboardButton extends react_1.default.Component {
         //   ? this.refs.element.getDOMNode()
         //   : this.element;
         const element = this.element;
-        this.clipboard = new clipboard_1.default(element, options);
+        this.clipboard = new Clipboard(element, options);
         const callbacks = this.propsWith(/^on/, true);
         Object.keys(callbacks).forEach(callback => {
             this.clipboard.on(callback.toLowerCase(), this.props[`on${callback}`]);
@@ -53,7 +53,7 @@ class ClipboardButton extends react_1.default.Component {
         const attributes = Object.assign({ type: this.getType(), className: this.props.className || '', style: this.props.style || {}, ref: element => {
                 this.element = element;
             }, onClick: this.props.onClick }, this.propsWith(/^data-/), this.propsWith(/^button-/, true));
-        return react_1.default.createElement(this.getComponent(), attributes, this.props.children);
+        return React.createElement(this.getComponent(), attributes, this.props.children);
     }
     getType() {
         if (this.getComponent() === 'button' || this.getComponent() === 'input') {
@@ -82,16 +82,16 @@ ClipboardButton.propTypes = {
             }
         }
     },
-    type: prop_types_1.default.string,
-    className: prop_types_1.default.string,
-    style: prop_types_1.default.object,
-    component: prop_types_1.default.oneOfType([prop_types_1.default.string, prop_types_1.default.object]),
-    children: prop_types_1.default.oneOfType([
-        prop_types_1.default.element,
-        prop_types_1.default.arrayOf(prop_types_1.default.element),
-        prop_types_1.default.string,
-        prop_types_1.default.number,
-        prop_types_1.default.object,
+    type: PropTypes.string,
+    className: PropTypes.string,
+    style: PropTypes.object,
+    component: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    children: PropTypes.oneOfType([
+        PropTypes.element,
+        PropTypes.arrayOf(PropTypes.element),
+        PropTypes.string,
+        PropTypes.number,
+        PropTypes.object,
     ]),
 };
 ClipboardButton.defaultProps = {

@@ -1,6 +1,6 @@
-import Clipboard from 'clipboard';
-import PropTypes from 'prop-types';
-import React from 'react';
+import * as Clipboard from 'clipboard';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 interface ClipboardButtonProps {
     type?: string;
     className?: string;
